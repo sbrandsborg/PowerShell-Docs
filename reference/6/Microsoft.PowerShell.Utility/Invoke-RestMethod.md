@@ -170,6 +170,18 @@ By supplying a list to the `hobbies` key,
 the `hobbies` field will be present in the submissions
 once for each list item.
 
+### Example 5: Pass multiple headers
+```powershell
+$headers = @{ 
+    'userId' = 'UserIDValue'
+    'token' = 'TokenValue'
+}
+Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body 
+```
+APIs often require passed headers for authentication, validation etc.
+This example demonstrates, how to pass multiple headers in from a `hash-table` to a REST API.
+
+
 ## Parameters
 
 ### -AllowUnencryptedAuthentication
